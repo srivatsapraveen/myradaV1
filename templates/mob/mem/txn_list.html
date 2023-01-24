@@ -1,0 +1,29 @@
+
+  <div class="container">
+	<form class="row g-3 mb-4">
+	
+	  <div class="col-6">
+		<label for="inputEmail4" class="form-label" tkey="mem_id">MemberID</label>
+		<input class="form-control" type="text" value="{{mem_info.mem_id}}" aria-label="readonly input example" readonly>
+	  </div>
+	  <div class="col-6">
+		<label for="cep_name" class="form-label" tkey="mem_name">Member Name</label>
+		<input class="form-control" id="cep_name" value="{{mem_info.mem_name}}" aria-label="readonly input example" readonly>
+	  </div>
+	</form>  
+  </div>
+  
+  <div class="container" style="padding-bottom:70px">
+	<table id="txnlist" class="display nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th tkey="txn_type">Type</th>
+                <th tkey="txn_date">Date</th>
+                <th tkey="txn_amount">Amount</th>
+            </tr>
+        </thead>
+    </table>
+  </div>
+  <div class="btn-group d-flex fixed-bottom">
+	<a href="#" onclick="loadPage('/mob/txn/{{mem_info.mem_id}}','app-main','newTXN');return false;" type="button" class="btn btn-primary" tkey="new_txn">New Transaction</a>
+  </div>

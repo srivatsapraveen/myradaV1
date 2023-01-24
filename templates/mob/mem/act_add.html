@@ -1,0 +1,43 @@
+  <form id="actForm" class="app-form" action="/mob/act" method="post" replace="app-main" mod="ACT">  
+  <div class="container">
+	<div class="row g-3 mb-4">	
+	  <div class="col-6">
+		<input class="form-control" type="hidden" id="actid" value="" name="act_id">	  
+		<label for="inputEmail4" class="form-label" tkey="mem_id">MemberID</label>
+		<input class="form-control" type="text" value="{{mem_info.mem_id}}" aria-label="readonly input example" readonly name="mem_id">
+	  </div>
+	  <div class="col-6">
+		<label for="cep_name" class="form-label" tkey="mem_name">Member Name</label>
+		<input class="form-control" id="cep_name" value="{{mem_info.mem_name}}" aria-label="readonly input example" readonly>
+	  </div>
+	  <div class="col-12">
+		<input class="form-control" type="hidden" id="mem_pur_id" value="{{mem_info.mem_act}}">
+		<label for="pur_list" class="form-label"  tkey="mem_purpose">Purpose</label>
+		<select id="pur_list" class="form-select" required disabled>
+			<option>Select a purpose for this member..</option>
+		</select>
+	  </div>
+	  
+	  <div class="col-12">
+		<label for="act_list" class="form-label" tkey="act_type">Activity</label>
+		<select id="act_list" class="form-select" name="act_type" required>
+		  <option>Select an activity for this purpose..</option>
+		</select>
+	  </div>
+	  <div class="col-12">
+		<label for="actDate" class="form-label" tkey="act_date">Date</label>
+		<input type="date" class="form-control" id="actDate" value="" name="act_date" required def_today>
+	  </div>
+	  <div class="col-12">
+		<label for="actNotes" class="form-label" tkey="act_notes">Notes</label>
+		<input class="form-control" id="actNotes" value="-" name="act_notes" required>
+	  </div>
+	  
+	</div>  
+  </div>
+  
+  	<div class="btn-group d-flex fixed-bottom">
+		<button type="submit" class="btn btn-primary" tkey="save">Save</button>
+		<a href="#" onclick="loadPage('/mob/acts/{{mem_info.mem_id}}','app-main','ACT');return false;" type="button" class="btn btn-primary" tkey="cancel">Cancel</a>
+	</div>
+  </form>

@@ -1,0 +1,44 @@
+  <form id="txnForm" class="app-form" action="/mob/txn" method="post" replace="app-main" mod="TXN">  
+  <div class="container">
+	<div class="row g-3 mb-4">	
+	  <div class="col-6">
+		<input class="form-control" type="hidden" id="txnid" value="{{txn_info.txn_id}}" name="txn_id">	  
+		<label for="inputEmail4" class="form-label" tkey="mem_id">MemberID</label>
+		<input class="form-control" type="text" value="{{mem_info.mem_id}}" aria-label="readonly input example" readonly name="mem_id">
+	  </div>
+	  <div class="col-6">
+		<label for="cep_name" class="form-label" tkey="mem_name">Member Name</label>
+		<input class="form-control" id="cep_name" value="{{mem_info.mem_name}}" aria-label="readonly input example" readonly>
+	  </div>
+	  
+	  <div class="col-12">
+		<label for="inputState" class="form-label" tkey="txn_type">Type</label>
+		<select id="inputState" class="form-select" name="txn_type" required {{'disabled' if txn_info.txn_type!='txn_due'}}>
+
+		{% if (txn_info.txn_type=='txn_disbursed') %}
+		  <option value="txn_disbursed" selected tkey="txn_disbursed">Disbursed</option>
+		{% else %}
+		  <option value="txn_collected" {{'selected' if txn_info.txn_type=='txn_collected'}} tkey="txn_collected">Collected</option>
+		  <option value="txn_due" {{'selected' if txn_info.txn_type=='txn_due'}} tkey="txn_due">Due</option>
+		{% endif %}
+
+
+		</select>
+	  </div>
+	  <div class="col-12">
+		<label for="txnDate" class="form-label" tkey="txn_date">Date</label>
+		<input type="date" class="form-control" id="txnDate" value="{{txn_info.txn_date}}" name="txn_date" required {{'readonly' if txn_info.txn_type!='txn_due'}}>
+	  </div>
+	  <div class="col-12">
+		<label for="portfolio" class="form-label" tkey="txn_amount">Amount</label>
+		<input type="number" class="form-control" id="portfolio" value="{{txn_info.txn_amt}}" name="txn_amt" required {{'readonly' if txn_info.txn_type!='txn_due'}}>
+	  </div>
+	  
+	</div>  
+  </div>
+  
+  	<div class="btn-group d-flex fixed-bottom">
+		<button type="submit" class="btn btn-primary" tkey="save">Save</button>
+		<a href="#" onclick="loadPage('/mob/txns/{{mem_info.mem_id}}','app-main','TXN');return false;" type="button" class="btn btn-primary" tkey="cancel">Cancel</a>
+	</div>
+  </form>

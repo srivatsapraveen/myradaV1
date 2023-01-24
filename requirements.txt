@@ -1,0 +1,6 @@
+fastapi
+Jinja2
+python-multipart
+uvicorn
+deta
+python-dateutil

@@ -1,0 +1,35 @@
+		<nav class="pt-2" aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="#" tkey="villages" onclick="loadLOC(0);return false;">Villages</a></li>
+			<li class="breadcrumb-item active" aria-current="page" tkey="manage_vlg">Manage</li>
+		  </ol>
+		</nav>
+
+		<div class="container" >
+		<form id="crpForm" class="app-form" action="/web/vlg/new" method="post" replace="app-main" mod="LOC">		
+			<input class="form-control" type="hidden" id="vlgid" value="{{vlg_info.vlg_id}}" name="vlg_id">
+			<div class="row g-3 mb-4">
+
+			  <div class="col-md-4">
+				<input class="form-control" type="hidden" id="hdnlocid" name="loc_id">
+				<label for="loc_list" class="form-label" tkey="crp_cluster">Cluster</label>
+				<select id="loc_list" class="form-select" name="loc_id" disabled>
+				</select>
+			  </div>
+			  
+			  <div class="col-md-4">
+				<label for="crp_name" class="form-label" tkey="vlg_name">Village Name</label>
+				<input class="form-control" id="crpname" value="{{vlg_info.vlg_desc_en}}" name="vlg_desc_en" required maxlength=50>
+			  </div>
+
+			  <div class="col-md-4">
+				<label for="portfolio" class="form-label" tkey="vlg_name_kn">Village Name (Kannada)</label>
+				<input type="int" class="form-control" id="portfolio" value="{{vlg_info.vlg_desc_kn}}" name="vlg_desc_kn" required maxlength=50>
+			  </div>
+		  
+			  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+				<button class="btn btn-primary" type="submit" tkey="save">Save</a>
+			  </div>	
+			</div>
+		</form>
+		</div>  

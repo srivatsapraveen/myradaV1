@@ -1,0 +1,41 @@
+  <div class="container">
+  <form id="memForm" class="app-form" action="/mob/mem/new" method="post" replace="app-main" mod="MEM">    
+	<div class="row g-3 mb-4" >
+	
+	  <div class="col-12">
+		<input class="form-control" type="hidden" id="shg_id" value="{{shgid}}" name="shg_id">
+	  
+		<label for="memid" class="form-label" tkey="mem_id">MemberID</label>
+		<input id="memid" class="form-control" type="text" value="" aria-label="readonly input example" readonly name="mem_id">
+	  </div>
+	  <div class="col-12">
+		<label for="mem_name" class="form-label"  tkey="mem_name">Member Name</label>
+		<input class="form-control" id="mem_name" value="" name="mem_name" required>
+	  </div>
+	  <div class="col-12">
+		<label for="mem_sname" class="form-label"  tkey="mem_spouse">Spouse Name</label>
+		<input class="form-control" id="mem_sname" value="" name="mem_spouse" required>
+	  </div>
+	  
+	  <div class="col-md-12">
+		<label for="pur_list" class="form-label"  tkey="mem_purpose">Purpose</label>
+		<select id="pur_list" class="form-select" name="mem_act" required>
+			<option>Select a purpose for this member..</option>
+		</select>
+	  </div>
+	  
+	  <div class="col-md-12">
+		<label for="pur_amount" class="form-label"  tkey="mem_amount">Authorized</label>
+		<input class="form-control" id="pur_amount" value="" name="mem_totamt" required readonly>
+	  </div>
+	</div>  
+
+  	<div class="btn-group d-flex fixed-bottom">
+		<button type="submit" class="btn btn-primary" tkey="save">Save</button>
+		<a href="#" onclick="loadPage('/mob/mems/{{shgid}}','app-main','MEM');return false;" type="cancel" class="btn btn-primary" tkey="cancel">Cancel</a>
+	</div>
+	</form>
+
+  </div> 
+
+  

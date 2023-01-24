@@ -1,0 +1,55 @@
+  <div class="container" style="padding-bottom:40px">
+  <form id="crpForm" class="app-form" action="/mob/crp/{{crpid}}" method="post" replace="app-main" mod="SHG">  
+	<div class="row g-3 mb-4">
+	
+	  <div class="col-6">
+		<input class="form-control" type="hidden" id="cep_mode" value="{{crp_info.crp_mode}}" name="crp_mode" />
+		<input class="form-control" type="hidden" id="cep_id" value="{{crp_info.crp_id}}" name="crp_id" />
+		<label for="cep_name" class="form-label" tkey="crp_name">My Name</label>
+		<input class="form-control" id="cep_name" value="{{crp_info.crp_name}}" aria-label="readonly input example" readonly name="crp_name" />
+	  </div>
+	  <div class="col-6">
+		<label for="pin" class="form-label" tkey="pwd">Password</label>
+		<input type="password" class="form-control" id="pin" value="{{crp_info.crp_pwd}}" name="crp_pwd" />
+	  </div>	  
+	  <div class="col-6">
+		<label for="inputEmail4" class="form-label" tkey="crp_phone">My Phone</label>
+		<input class="form-control" type="text" value="{{crp_info.crp_phone}}" aria-label="readonly input example" readonly name="crp_phone" />
+	  </div>
+	  <div class="col-6">
+		<input class="form-control" type="hidden" id="crp_loc" value="{{crp_info.crp_loc}}" name="crp_loc" />
+		<label for="inputState" class="form-label" tkey="crp_cluster">Cluster</label>
+		<input class="form-control" id="crp_loc_desc" value="" readonly />
+	  </div>
+	  <div class="col-6">
+		<label for="portfolio" class="form-label" tkey="crp_portfolio">Target</label>
+		<input class="form-control" id="portfolio" value="{{crp_info.crp_totalamt}}" aria-label="readonly input example" readonly name="crp_totalamt" />
+	  </div>
+	  <div class="col-6">
+		<label for="portfolio" class="form-label" tkey="crp_lastactivity">Last Activity</label>
+		<input class="form-control" id="lastactivity" value="{{crp_info.crp_lastactivity}}" aria-label="readonly input example" readonly />
+	  </div>
+
+	  <div class="col-4">
+		<label for="inputState" class="form-label" tkey="crp_disbursed">Disbursed</label>
+		<input class="form-control" id="cep_name" value="{{crp_info.crp_amtdisbursed}}" aria-label="readonly input example" readonly />
+	  </div>
+	  <div class="col-4">
+		<label for="portfolio" class="form-label" tkey="crp_collected">Collected</label>
+		<input class="form-control" id="portfolio" value="{{crp_info.crp_amtcollected}}" aria-label="readonly input example" readonly  />
+	  </div>
+	  <div class="col-4">
+		<label for="portfolio" class="form-label" tkey="crp_inhand">In Hand</label>
+		<input class="form-control" id="portfolio" value="{{crp_info.crp_amtinhand}}" aria-label="readonly input example" readonly />
+	  </div>	  
+	</div>  
+	
+  	<div class="btn-group d-flex fixed-bottom">
+		<button type="submit" class="btn btn-primary" tkey="save">Save</button>
+		<a href="#" tkey="cancel" onclick="loadPage('/mob/shgs/{{crpid}}','app-main','HOME');return false;" type="button" class="btn btn-primary">Cancel</a>
+	</div>
+  </form>
+
+  </div>
+  
+	

@@ -1,0 +1,53 @@
+
+  <div class="container">
+  <form id="memForm" class="app-form" action="/mob/mem/{{mem_info.mem_id}}" method="post" replace="app-main" mod="TXN">
+	<div class="row g-3 mb-4" >
+	
+	  <div class="col-6">
+		<input class="form-control" type="hidden" id="shg_id" value="{{mem_info.shg_id}}" name="shg_id">
+		<label for="memid" class="form-label" tkey="mem_id">MemberID</label>
+		<input class="form-control" type="text" value="{{mem_info.mem_id}}" aria-label="readonly input example" readonly name="mem_id">
+	  </div>
+	  <div class="col-6">
+		<label for="mem_name" class="form-label" tkey="mem_name">Member Name</label>
+		<input class="form-control" id="mem_name" value="{{mem_info.mem_name}}" name="mem_name">
+	  </div>
+	  <div class="col-6">
+		<label for="mem_sname" class="form-label" tkey="mem_spouse">Spouse Name</label>
+		<input class="form-control" id="mem_sname" value="{{mem_info.mem_spouse}}" name="mem_spouse">
+	  </div>
+	  
+	  <div class="col-6">
+		<input class="form-control" type="hidden" id="mem_pur_id" value="{{mem_info.mem_act}}">
+		<label for="pur_list" class="form-label"  tkey="mem_purpose">Purpose</label>
+		<select id="pur_list" class="form-select" required disabled>
+			<option>Select a purpose for this member..</option>
+		</select>
+	  </div>
+	  <div class="col-6">
+		<label for="portfolio" class="form-label" tkey="mem_amount">Authorized</label>
+		<input class="form-control" id="authorized" value="{{mem_info.mem_totamt}}" name="mem_totamt" readonly>
+	  </div>
+	  <div class="col-6">
+		<label for="inputState" class="form-label" tkey="mem_outstanding">Outstanding</label>
+		<input class="form-control" id="cep_name" value="{{mem_info.mem_amtout}}" aria-label="readonly input example" readonly >
+	  </div>
+	  <div class="col-6">
+		<label for="portfolio" class="form-label" tkey="mem_received">Received</label>
+		<input class="form-control" id="portfolio" value="{{mem_info.mem_amtrec}}" aria-label="readonly input example" readonly>
+	  </div>
+	  <div class="col-6">
+		<label for="portfolio" class="form-label" tkey="mem_returned">Returned</label>
+		<input class="form-control" id="portfolio" value="{{mem_info.mem_amtret}}" aria-label="readonly input example" readonly>
+	  </div>
+	  
+	</div>  
+
+  	<div class="btn-group d-flex fixed-bottom">
+		<button type="submit" class="btn btn-primary" tkey="save">Save</button>
+		<a href="#" href="#" onclick="loadPage('/mob/txns/{{mem_info.mem_id}}','app-main','TXN');return false;" type="cancel" class="btn btn-primary" tkey="cancel">Cancel</a>
+	</div>
+	</form>
+
+  </div> 
+

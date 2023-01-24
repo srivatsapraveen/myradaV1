@@ -1,0 +1,110 @@
+		<nav class="pt-2" aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="#" tkey="dashboard" onclick="loadHOME();return false;">Dashboard</a></li>
+			<li class="breadcrumb-item"><a href="#" tkey="crp" onclick="load('CRP','{{shg_info.crp_id}}');return false;">CRP</a></li>
+			<li class="breadcrumb-item active" aria-current="page" tkey="shg">SHG</li>
+		  </ol>
+		</nav>
+		
+		<div class="container" >  
+		<div class="row g-3 mb-4">	
+		  <div class="col-md-4">
+			<label for="crp_name" class="form-label" tkey="shg_name">SHG Name</label>
+			<input class="form-control" id="shg_name" value="{{shg_info.shg_name}}" readonly>
+		  </div>
+		  
+		  <div class="col-md-4">
+			<label for="shg_loc_desc" class="form-label" tkey="shg_cluster">Cluster</label>
+			<input class="form-control" id="shg_loc_desc" value="" readonly>
+		  </div>
+
+		  <div class="col-md-4">
+			<label for="crp_vlg_desc" class="form-label" tkey="shg_village">Village</label>
+			<input class="form-control" id="shg_vlg_desc" value="" readonly>
+		  </div>
+
+		</div>
+		
+		<nav>
+		  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+			<button class="nav-link active" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="true" tkey="mems">Members</button>
+			<button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" tkey="shg_info">SHG Info</button>
+		  </div>
+		</nav>
+		<div class="tab-content border p-4" id="nav-tabContent">
+		  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+			<form id="shgForm" class="app-form" action="/web/shg/edit" method="post" replace="app-main" mod="MEM">		
+			<div class="row g-3 mb-4">
+				<input class="form-control" type="hidden" id="crp_id" value="{{shg_info.crp_id}}" name="crp_id">
+				<input class="form-control" type="hidden" id="shg_id" value="{{shg_info.shg_id}}" name="shg_id">
+			
+				  <div class="col-md-4">
+					<label for="crp_name" class="form-label" tkey="shg_name">SHG Name</label>
+					<input class="form-control" id="shg_name" value="{{shg_info.shg_name}}" name="shg_name" required maxlength=50>
+				  </div>
+
+				  <div class="col-md-8">
+					<label for="fullname" class="form-label" tkey="shg_fullname">Full Name</label>
+					<input class="form-control" id="fullname" value="{{shg_info.shg_fullname}}" name="shg_fullname">
+				  </div>
+				  
+				  <div class="col-md-4">
+					<input class="form-control" type="hidden" id="shg_loc" value="{{shg_info.shg_loc}}" name="shg_loc">
+					<label for="shg_loc_desc_form" class="form-label" tkey="crp_cluster">Cluster</label>
+					<input class="form-control" id="shg_loc_desc_form" value="" readonly >				  
+				  </div>
+
+				  <div class="col-md-4">
+					<input class="form-control" type="hidden" id="shg_vlg" value="{{shg_info.shg_vlg}}" name="shg_vlg">
+					<label for="shg_vlg_desc_form" class="form-label" tkey="shg_village">Village</label>
+					<input class="form-control" id="shg_vlg_desc_form" value="" readonly >				  
+				  </div>
+
+
+				  <div class="col-md-4">
+					<label for="pin" class="form-label" tkey="shg_members">Member Count</label>
+					<input class="form-control" id="memcount" value="{{shg_info.shg_memcount}}" readonly name="shg_memcount">
+				  </div>
+			
+				  <div class="col-md-4">
+					<label for="pin" class="form-label" tkey="shg_disbursed">Disbursed</label>
+					<input class="form-control" id="pin" value="{{shg_info.shg_amtdisbursed}}" readonly name="shg_amtdisbursed">
+				  </div>
+
+				  <div class="col-md-4">
+					<label for="pin" class="form-label" tkey="shg_collected">Collected</label>
+					<input class="form-control" id="pin" value="{{shg_info.shg_amtcollected}}" readonly name="shg_amtcollected">
+				  </div>
+
+				  <div class="col-md-4">
+					<label for="pin" class="form-label" tkey="shg_lastactivity">Last Activity</label>
+					<input class="form-control" id="pin" value="{{shg_info.shg_lastactivity}}" readonly name="shg_lastactivity">
+				  </div>
+
+				
+				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+				  {% if shg_info.shg_memcount == 0 %}
+				  <a href="#" onclick="delSHG('{{shg_info.shg_id}}');return false;" class="btn btn-primary" tkey="del">Delete</a>
+				  {% endif %}
+				  <button class="btn btn-primary" type="submit" tkey="save">Save</button>
+				</div>	
+			</div>  	  
+			</form>
+		  </div>
+		  <div class="tab-pane fade  show active" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+				<table id="memlist" class="display nowrap responsive" style="width:100%">
+					<thead>
+						<tr>
+							<th tkey="mem_name">Member Name</th>
+							<th tkey="mem_purpose">Purpose</th>
+							<th tkey="mem_amount">Amount</th>
+							<th tkey="mem_disbursed">Disbursed</th>
+							<th tkey="mem_collected">Collected</th>
+							<th tkey="mem_outstanding">Outstanding</th>
+							<th tkey="mem_lastactivity">Last Activity</th>
+						</tr>
+					</thead>
+				</table>  
+		  </div>
+		</div>
+		</div>  

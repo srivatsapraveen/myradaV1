@@ -1,0 +1,26 @@
+		<nav class="pt-2" aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+			<li class="breadcrumb-item active" aria-current="page" id="lblMode" tkey="">Villages</li>
+		  </ol>
+		</nav>
+		
+		<div class="row">
+			<div class="col-md-4">
+				<select id="loc_list" class="form-select" onchange="loadVLGList()">
+				</select>
+				
+			</div>
+			<div class="col-md-4">
+				<button class="btn btn-primary" type="button" onclick='loadNEWVLG()'><span>New Village</span></button>
+			</div>
+		</div>
+
+		<table id="vlglist" class="display nowrap" style="width:100%">
+			<thead>
+				<tr>
+					<th tkey="vlg_id">Village ID</th>
+					<th tkey="vlg_desc_en">Village Name</th>
+					<th tkey="vlg_desc_kn">Village Name (Kannada)</th>
+				</tr>
+			</thead>
+		</table>

@@ -1,0 +1,227 @@
+[
+  {
+    "pur_id": "P00",
+    "pur_desc_en": "en-General",
+    "pur_desc_kn": "kn-General",
+    "pur_amt": 0,
+    "pur_sch": 0,
+    "pur_act": [
+      {
+        "act_id": "P00.A01",
+        "act_desc_en": "en-Motivational Training",
+        "act_desc_kn": "kn-Motivational Training"
+      },
+      {
+        "act_id": "P00.A02",
+        "act_desc_en": "en-EDP Training",
+        "act_desc_kn": "kn-EDP Training"
+      },
+      {
+        "act_id": "P00.A03",
+        "act_desc_en": "en-Site Visit",
+        "act_desc_kn": "kn-Site Visit"
+      }
+    ]
+  },
+  {
+    "pur_id": "P01",
+    "pur_desc_en": "Dairy : Cow/Buffalo",
+    "pur_desc_kn": "kn-Dairy : Cow/Buffalo",
+    "pur_amt": 8000,
+    "pur_sch": 12,
+    "pur_act": [
+      {
+        "act_id": "P01.A01",
+        "act_desc_en": "en-Cow/Buffalo Purchased",
+        "act_desc_kn": "kn-Cow/Buffalo Purchased"
+      },
+      {
+        "act_id": "P01.A02",
+        "act_desc_en": "en-Insurance Taken",
+        "act_desc_kn": "kn-Insurance Taken"
+      },
+      {
+        "act_id": "P01.A03",
+        "act_desc_en": "en-Litres of milk sold last month",
+        "act_desc_kn": "kn-Litres of milk sold last month"
+      }
+    ]
+  },
+  {
+    "pur_id": "P02",
+    "pur_desc_en": "Sheep/Goat Rearing",
+    "pur_desc_kn": "kn-Sheep/Goat Rearing",
+    "pur_amt": 5000,
+    "pur_sch": 12,
+    "pur_act": [
+      {
+        "act_id": "P02.A01",
+        "act_desc_en": "en-Sheep/Goat Purchased",
+        "act_desc_kn": "kn-Sheep/Goat Purchased"
+      },
+      {
+        "act_id": "P02.A02",
+        "act_desc_en": "en-Insurance Taken",
+        "act_desc_kn": "kn-Insurance Taken"
+      },
+      {
+        "act_id": "P02.A03",
+        "act_desc_en": "en-Sheep/Goat Sold for ",
+        "act_desc_kn": "kn-Sheep/Goat Sold for "
+      }
+    ]
+  },
+  {
+    "pur_id": "P03",
+    "pur_desc_en": "Back Yard Poultry",
+    "pur_desc_kn": "kn-Back Yard Poultry",
+    "pur_amt": 2000,
+    "pur_sch": 12,
+    "pur_act": [
+      {
+        "act_id": "P03.A01",
+        "act_desc_en": "en-Purchase of Poultry",
+        "act_desc_kn": "kn-Purchase of Poultry"
+      },
+      {
+        "act_id": "P03.A02",
+        "act_desc_en": "en-Purchase of Feed",
+        "act_desc_kn": "kn-Purchase of Feed"
+      },
+      {
+        "act_id": "P03.A03",
+        "act_desc_en": "en-Birds Sold for ",
+        "act_desc_kn": "kn-Birds Sold for "
+      }
+    ]
+  },
+  {
+    "pur_id": "P04",
+    "pur_desc_en": "Grocery, Fancy/ Bangle Shop",
+    "pur_desc_kn": "kn-Grocery, Fancy/ Bangle Shop",
+    "pur_amt": 5000,
+    "pur_sch": 12,
+    "pur_act": [
+      {
+        "act_id": "P04.A01",
+        "act_desc_en": "en-Materials Purchased",
+        "act_desc_kn": "kn-Materials Purchased"
+      },
+      {
+        "act_id": "P04.A02",
+        "act_desc_en": "en-Sale in previous month",
+        "act_desc_kn": "kn-Sale in previous month"
+      }
+    ]
+  },
+  {
+    "pur_id": "P05",
+    "pur_desc_en": "Support for vegetable cultivation",
+    "pur_desc_kn": "kn-Support for vegetable cultivation",
+    "pur_amt": 5000,
+    "pur_sch": 12,
+    "pur_act": [
+      {
+        "act_id": "P05.A01",
+        "act_desc_en": "en-Land Prepared",
+        "act_desc_kn": "kn-Land Prepared"
+      },
+      {
+        "act_id": "P05.A02",
+        "act_desc_en": "en-Seeds/Fertilizers procured",
+        "act_desc_kn": "kn-Seeds/Fertilizers procured"
+      },
+      {
+        "act_id": "P05.A03",
+        "act_desc_en": "en-Sale in previous month",
+        "act_desc_kn": "kn-Sale in previous month"
+      }
+    ]
+  },
+  {
+    "pur_id": "P06",
+    "pur_desc_en": "Support for flower cultivation",
+    "pur_desc_kn": "kn-Support for flower cultivation",
+    "pur_amt": 5000,
+    "pur_sch": 12,
+    "pur_act": [
+      {
+        "act_id": "P06.A01",
+        "act_desc_en": "en-Land Prepared",
+        "act_desc_kn": "kn-Land Prepared"
+      },
+      {
+        "act_id": "P06.A02",
+        "act_desc_en": "en-Seeds/Fertilizers procured",
+        "act_desc_kn": "kn-Seeds/Fertilizers procured"
+      },
+      {
+        "act_id": "P06.A03",
+        "act_desc_en": "en-Sale in previous month",
+        "act_desc_kn": "kn-Sale in previous month"
+      }
+    ]
+  },
+  {
+    "pur_id": "P07",
+    "pur_desc_en": "Tailoring machine/cloth business",
+    "pur_desc_kn": "kn-Tailoring machine/cloth business",
+    "pur_amt": 4000,
+    "pur_sch": 12,
+    "pur_act": [
+      {
+        "act_id": "P07.A01",
+        "act_desc_en": "en-Purchase of machine",
+        "act_desc_kn": "kn-Purchase of machine"
+      },
+      {
+        "act_id": "P07.A02",
+        "act_desc_en": "en-Sales in previous month",
+        "act_desc_kn": "kn-Sales in previous month"
+      }
+    ]
+  },
+  {
+    "pur_id": "P08",
+    "pur_desc_en": "Roti/ Sambar/ Chatni powder making unit",
+    "pur_desc_kn": "kn-Roti/ Sambar/ Chatni powder making unit",
+    "pur_amt": 3000,
+    "pur_sch": 12,
+    "pur_act": [
+      {
+        "act_id": "P08.A01",
+        "act_desc_en": "en-Purchase of raw material",
+        "act_desc_kn": "kn-Purchase of raw material"
+      },
+      {
+        "act_id": "P08.A02",
+        "act_desc_en": "en-Sales in previous month",
+        "act_desc_kn": "kn-Sales in previous month"
+      }
+    ]
+  },
+  {
+    "pur_id": "P09",
+    "pur_desc_en": "Honey Rearing",
+    "pur_desc_kn": "kn-Honey Rearing",
+    "pur_amt": 5000,
+    "pur_sch": 12,
+    "pur_act": [
+      {
+        "act_id": "P09.A01",
+        "act_desc_en": "en-Honey box Purchase",
+        "act_desc_kn": "kn-Honey box Purchase"
+      },
+      {
+        "act_id": "P09.A02",
+        "act_desc_en": "en-Bee colonies are thriving",
+        "act_desc_kn": "kn-Bee colonies are thriving"
+      },
+      {
+        "act_id": "P09.A03",
+        "act_desc_en": "en-Litres of Honey Collected last month",
+        "act_desc_kn": "kn-Litres of Honey Collected last month"
+      }
+    ]
+  }
+]

@@ -1,0 +1,45 @@
+		<nav class="pt-2" aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="#" onclick="loadHOME();return false;" tkey="dashboard">Dashboard</a></li>
+			<li class="breadcrumb-item active" aria-current="page" tkey="new_crp">NEW CRP</li>
+		  </ol>
+		</nav>
+
+		<div class="container" >
+		<form id="crpForm" class="app-form" action="/web/crp/new" method="post" replace="app-main" mod="CRP">		
+			<input class="form-control" type="hidden" id="crp_mode" value="" name="crp_mode">
+			<input class="form-control" type="hidden" id="crpid" value="" name="crp_id">
+			<div class="row g-3 mb-4">
+
+			  <div class="col-md-4">
+				<label for="loc_list" class="form-label" tkey="crp_cluster">Cluster</label>
+				<select id="loc_list" class="form-select" name="crp_loc">
+				</select>
+			  </div>
+			  
+			  <div class="col-md-4">
+				<label for="crp_name" class="form-label" tkey="crp_name">CRP Name</label>
+				<input class="form-control" id="crpname" value="" name="crp_name" required maxlength=50>
+			  </div>
+
+			  <div class="col-md-4">
+				<label for="portfolio" class="form-label" tkey="crp_portfolio">CRP Portfolio</label>
+				<input type="int" class="form-control" id="portfolio" value="" name="crp_totalamt" required maxlength=50>
+			  </div>
+
+			  <div class="col-md-4">
+				<label for="crp_id" class="form-label" tkey="crp_phone">CRP PhoneNo</label>
+				<input class="form-control" type="text" id="crpphone" value="" name="crp_phone" required maxlength=10>
+			  </div>
+			  
+			  <div class="col-md-4">
+				<label for="pin" class="form-label" tkey="pwd">Password</label>
+				<input type="password" class="form-control" id="pwd" value="" name="crp_pwd" required maxlength=10>
+			  </div>
+		  
+			  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+				<button class="btn btn-primary" type="submit" tkey="save">Save</a>
+			  </div>	
+			</div>
+		</form>
+		</div>  

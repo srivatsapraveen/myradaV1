@@ -1,0 +1,40 @@
+  <div class="container" style="padding-bottom:40px">
+  <h5>Consolidated Report</h5>
+  <form id="crpForm" class="app-form" action="/mob/crpt/{{crpid}}" method="post" replace="app-main" mod="SHG">  
+	<div class="row g-3 mb-4">
+	
+	  <input class="form-control" type="hidden" id="cep_mode" value="" />
+	  <input class="form-control" type="hidden" id="cep_id" value="{{crp_id}}" />
+	  <div class="col-6">
+		<label for="txnDate" class="form-label" tkey="txn_fdate">From Date</label>
+		<input type="date" class="form-control" id="stDate" value="{{rpt_info.st_date}}" name="st_date" required>
+	  </div>
+	  <div class="col-6">
+		<label for="txnDate" class="form-label" tkey="txn_tdate">To Date</label>
+		<input type="date" class="form-control" id="enDate" value="{{rpt_info.en_date}}" name="en_date" required>
+	  </div>	  
+	  <div class="col-6">
+		<label for="inputEmail4" class="form-label" tkey="amt_dis">Disbursed</label>
+		<input class="form-control" type="text" value="{{rpt_info.dis_amt}}" aria-label="readonly input example" readonly />
+	  </div>
+	  <div class="col-6">
+		<label for="inputEmail4" class="form-label" tkey="amt_col">Collected</label>
+		<input class="form-control" type="text" value="{{rpt_info.col_amt}}" aria-label="readonly input example" readonly  />
+	  </div>
+	</div>  
+	
+	{% for txn in rpt_info.txn_details %}
+		{% if txn["txn_type"] != "txn_due" %}
+			On {{txn["txn_date"]}} Rs {{txn["txn_amt"]}} was {{txn["txn_type"] |replace("txn_disbursed", "Disbursed") |replace("txn_collected", "Collected")}} from {{txn["mem_name"]}} of {{txn["shg_name"]}}<br>
+		{% endif %}
+	{% endfor %}
+	
+  	<div class="btn-group d-flex fixed-bottom">
+		<button type="submit" class="btn btn-primary">Refresh</button>
+	</div>
+	
+  </form>
+
+  </div>
+  
+	

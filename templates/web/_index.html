@@ -1,0 +1,31 @@
+{% extends "com/web_base.html" %}
+{% block bodycontent %}
+	<div id="app-page">
+    <div class="text-center">
+		<main class="container form-signin">
+		<form id="loginForm" class="app-form" action="/web" method="post" replace="app-page" mod="HOME">
+			<!--<img class="mb-4" src="https://myrada.org/wp-content/uploads/2020/12/myrada-logo.png" alt="" height="57">-->
+			<span class="mb-4" tkey="mylife">MYRADA-LIFE</span>			
+			<h1 class="h3 mb-3 fw-normal" tkey="signin">Please sign in</h1>
+
+			<div class="form-floating">
+			  <input type="email" class="form-control" id="userid" value="" name="userid">
+			  <label for="userid" tkey="uid">UserID</label>
+			</div>
+			<div class="form-floating">
+			  <input type="password" class="form-control" id="pwd" value="" name="pwd" required>
+			  <label for="pwd" tkey="pwd">Password</label>
+			</div>
+			<button class="w-100 btn btn-lg btn-primary" type="submit" tkey="login">Login</button>
+		  </form>
+		  <div class="mt-2">
+		  <a href="#" onclick="loadLang('en');return false;">English</a> | (V1.0b) | <a href="#" onclick="loadLang('kn');return false;">ಕನ್ನಡ</a>
+		  </div>
+		</main>
+		{% if (error != None or error != '') %}
+			<span tkey='{{error}}'>{{error}}</span>	
+		{% endif %}
+		
+	</div>
+	</div>
+{% endblock bodycontent %}

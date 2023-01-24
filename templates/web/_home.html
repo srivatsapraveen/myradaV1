@@ -1,0 +1,41 @@
+	<header class="container-fluid">
+	<nav class="navbar navbar-expand navbar-light fixed-top bg-light p-1">
+	  <div class="container-fluid">
+		<!--<img class="m-1" src="https://myrada.org/wp-content/uploads/2020/12/myrada-logo.png" alt="" height="30">-->
+		<input class="form-control" type="hidden" id="_mode" value="{{mode}}" name="crp_mode">
+		<span tkey="mylife">MYRADA-LIFE</span>		
+		{% if (mode == 'train') %}
+			<div class="px-2">/ [TRAINING MODE]</div>
+		{% endif %}
+		
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+		  <ul class="navbar-nav ms-auto">
+			<li class="nav-item">
+			  <a class="nav-link active" aria-current="page" href="#" tkey="villages" onclick="loadLOC(1);return false;">Villages</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link active" aria-current="page" href="#" tkey="dashboard" onclick="loadHOME();return false;">Dashboard</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false" tkey="reports">Reports</a>
+				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown03">
+				  <li><a class="dropdown-item x-go" onclick="loadPage('/web/rpt/summary','app-main','rpt.status');return false;" tkey="rpt_status">Status</a></li>
+				</ul>
+			</li>			
+			<li class="nav-item">
+			  <a class="nav-link" href="#" onclick="window.location.replace('/web');return false;" tkey="logout">Logout</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>  
+	</header>
+
+	<main class="container" style="padding-top:70px">
+	<div id="app-main">
+
+	</div>
+	</main>

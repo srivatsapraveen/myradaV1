@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<link rel="shortcut icon" href="https://myrada.org/wp-content/uploads/2014/10/FAV.gif">	
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+		<label for="pur_list" class="form-label" tkey="act_type">Purpose</label>
+		<select id="pur_list" class="form-select" name="act_type" required>
+
+		</select>
+		<input id="pur_desc"></input>
+
+		<br/>
+		<label for="act_list" class="form-label" tkey="act_type">Activity</label>
+		<select id="act_list" class="form-select" name="act_type" required>
+
+		</select>
+		<input id="act_desc"></input>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+		
+<script>
+	var langCode = 'kn';
+	var purdict;
+	$.getJSON('/static/js/dat/act_mas.json?v1', function(result){
+		purdict = result;
+		//alert(purdict);
+		get_pur_list();
+	});	
+	
+	function get_pur_list(){
+	$('#pur_list').empty();
+	//$.getJSON('/static/js/dat/act_mas.json', function(result){
+		$.each(purdict, function(i, item) {
+			//console.log(item.pur_desc_en);
+			if (item.pur_id !== 'P00')
+				$('<option>').val(item.pur_id).text((langCode === 'en') ? item.pur_desc_en : item.pur_desc_kn).appendTo('#pur_list');
+		});	
+	//});	
+	}
+
+	function get_pur_desc(pur_id){
+	//$.getJSON('/static/js/dat/act_mas.json', function(result){
+		$.each(purdict, function(i, item) {
+			if (item.pur_id === pur_id) pur_desc.value = (langCode === 'en') ? item.pur_desc_en : item.pur_desc_kn;
+		});	
+	//});	
+	}
+
+	function get_act_list(pur_id){
+	$('#act_list').empty();
+	//$.getJSON('/static/js/dat/act_mas.json', function(result){
+		$.each(purdict, function(i, item) {
+			if (item.pur_id === pur_id || item.pur_id === 'P00'){
+				$.each(item.pur_act, function(i, subitem) {
+					$('<option>').val(subitem.act_id).text((langCode === 'en') ? subitem.act_desc_en : subitem.act_desc_kn).appendTo('#act_list');
+				});
+			}			
+		});	
+	//});	
+	}
+	
+	function get_act_desc(pact_id){
+	console.log('getting act desc for ...' + pact_id);
+	//$.getJSON('/static/js/dat/act_mas.json', function(result){
+		$.each(purdict, function(i, item) {
+			$.each(item.pur_act, function(i, subitem) {
+				//console.log(subitem.act_id);
+				if (subitem.act_id === pact_id) act_desc.value = (langCode === 'en') ? subitem.act_desc_en : subitem.act_desc_kn;
+			});
+		});	
+	//});	
+	}
+
+	jQuery.fn.clog = function(msg) {
+		var txt = msg ? msg : "";
+		if (console && typeof console.log != "undefined") {
+			console.log('%o ', this, txt);
+		}
+		return this;
+	}
+
+	
+	
+	$('#pur_list').on('change',function(){
+		//var selected = $('#act_list option:selected');
+		//alert(selected.text());
+		get_pur_desc($('#pur_list').val());
+		get_act_list($('#pur_list').val());
+	});
+
+	$('#act_list').on('change',function(){
+		get_act_desc($('#act_list').val());
+	});
+
+	//$.getJSON('/static/js/dat/act_mas.json', function(result){
+	
+	//$.each(result, function(i, item) {
+	//	console.log(item.pur_desc_en);
+	//	$('<option>').val(item.pur_id).text(item.pur_desc_en).appendTo('#act_list');
+	//});
+		//alert(result);
+		//$(result).map(function () {
+		//	console.log(this.pur_desc_en);
+		//})
+
+		//$('<option>').val('ID').text('Desc').appendTo('#act_list');
+		//$('<option>').val('ID').text('Desc').clog();
+
+		//$(result).map(function () {
+		//	return $('<option>').val(this.pur_id).text(this.pur_desc_en);
+		//}).clog();
+		
+		//$(result).map(function () {
+		//	return $('<option>').val(this.pur_id).text(this.pur_desc_en);
+		//}).appendTo('#act_list');
+
+	//});	
+	
+</script>
+
+</body>
+</html>

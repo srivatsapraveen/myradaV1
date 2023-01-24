@@ -1,0 +1,105 @@
+		<nav class="pt-2" aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="#" tkey="dashboard" onclick="loadHOME();return false;">Dashboard</a></li>
+			<li class="breadcrumb-item active" aria-current="page" tkey="crp">CRP</li>
+		  </ol>
+		</nav>
+		
+		<div class="container" >  
+		<div class="row g-3 mb-4">	
+		  <div class="col-md-4">
+			<label for="crp_id" class="form-label" tkey="crp_phone">CRP PhoneNo</label>
+			<input class="form-control" type="text" id="crp_id" value="{{crp_info.crp_phone}}" aria-label="readonly input example" readonly>
+		  </div>
+		  <div class="col-md-4">
+			<label for="crp_name" class="form-label" tkey="crp_name">CRP Name</label>
+			<input class="form-control" id="crp_name" value="{{crp_info.crp_name}}" readonly>
+		  </div>
+		  
+		  <div class="col-md-4">
+				<label for="crp_loc_desc" class="form-label" tkey="crp_cluster">Cluster</label>
+				<input class="form-control" id="crp_loc_desc" value="" readonly>
+		  </div>
+		</div>
+		
+		<nav>
+		  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+			<button class="nav-link active" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="true" tkey="shgs">SHGs</button>
+			<button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" tkey="crp_profile">CRP Profile</button>
+		  </div>
+		</nav>
+		<div class="tab-content border p-4" id="nav-tabContent">
+		  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+			<form id="crpForm" class="app-form" action="/web/crp/edit" method="post" replace="app-main" mod="SHG">					
+			<div class="row g-3 mb-4">
+				<input class="form-control" type="hidden" id="crp_mode" value="{{crp_info.crp_mode}}" name="crp_mode">
+				<input class="form-control" type="hidden" id="crp_id" value="{{crp_info.crp_id}}" name="crp_id">
+			
+				  <div class="col-md-4">
+				    <input class="form-control" type="hidden" id="crpid" value="{{crp_info.key}}" name="key">
+		  
+					<label for="crp_id" class="form-label" tkey="crp_phone">CRP PhoneNo</label>
+					<input class="form-control" type="text" id="crp_id" value="{{crp_info.crp_phone}}" name="crp_phone" required maxlength=10>
+				  </div>
+				  <div class="col-md-4">
+					<label for="crp_name" class="form-label" tkey="crp_name">CRP Name</label>
+					<input class="form-control" id="crp_name" value="{{crp_info.crp_name}}" name="crp_name" required maxlength=50>
+				  </div>
+				  <div class="col-md-4">
+					<input class="form-control" type="hidden" id="crp_loc" value="{{crp_info.crp_loc}}" name="crp_loc">
+					<label for="crp_loc_desc_form" class="form-label" tkey="crp_cluster">Cluster</label>
+					<input class="form-control" id="crp_loc_desc_form" value="" readonly >				  
+				  </div>
+			
+				  <div class="col-md-4">
+					<label for="pin" class="form-label" tkey="pwd">Password</label>
+					<input type="password" class="form-control" id="pin" value="{{crp_info.crp_pwd}}" name="crp_pwd" required maxlength=10>
+				  </div>
+
+				  <div class="col-md-4">
+					<label for="portfolio" class="form-label" tkey="crp_portfolio">Amt Managed</label>
+					<input class="form-control" id="portfolio" value="{{crp_info.crp_totalamt}}" name="crp_totalamt" type="number" required maxlength=10>
+				  </div>
+
+				  <div class="col-md-4">
+					<label for="pin" class="form-label" tkey="crp_disbursed">Disbursed</label>
+					<input class="form-control" id="pin" value="{{crp_info.crp_amtdisbursed}}" readonly name="crp_amtdisbursed">
+				  </div>
+
+				  <div class="col-md-4">
+					<label for="pin" class="form-label" tkey="crp_collected">Collected</label>
+					<input class="form-control" id="pin" value="{{crp_info.crp_amtcollected}}" readonly name="crp_amtcollected">
+				  </div>
+
+				  <div class="col-md-4">
+					<label for="pin" class="form-label" tkey="crp_inhand">In Hand</label>
+					<input class="form-control" id="pin" value="{{crp_info.crp_amtinhand}}" readonly name="crp_amtinhand">
+				  </div>
+				  <div class="col-md-4">
+					<label for="pin" class="form-label" tkey="crp_lastactivity">Last Activity</label>
+					<input class="form-control" id="pin" value="{{crp_info.crp_lastactivity}}" readonly name="crp_lastactivity">
+				  </div>
+				
+				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+				  <button class="btn btn-primary" type="submit" tkey="save">Save</button>
+				</div>	
+			</div>  	  
+			</form>
+		  </div>
+		  <div class="tab-pane fade  show active" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+				<table id="shglist" class="display nowrap responsive" style="width:100%">
+					<thead>
+						<tr>
+							<th tkey="shg_name">SHG Name</th>
+							<th tkey="shg_village">Village</th>
+							<th tkey="shg_members">Members</th>
+							<th tkey="shg_disbursed">Disbursed</th>
+							<th tkey="shg_collected">Collected</th>
+							<th tkey="shg_outstanding">Outstanding</th>
+							<th tkey="shg_lastactivity">Last Activity</th>
+						</tr>
+					</thead>
+				</table>  
+		  </div>
+		</div>
+		</div>  

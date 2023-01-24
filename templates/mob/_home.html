@@ -1,0 +1,48 @@
+	<header class="container-fluid">
+	<nav class="navbar navbar-expand navbar-light fixed-top bg-light p-0">
+	  <div class="container-fluid">
+		<!--<img class="m-1" src="https://myrada.org/wp-content/uploads/2020/12/myrada-logo.png" alt="" height="30">-->
+		<input type="hidden" id="crpid" value="{{crpid}}">
+		<!--<a class="nav-link" href="#" onclick="loadPage('/mob/about/{{crpid}}','app-main','');return false;">
+			<i class="bi-bookmark text-dark fs-5" data-bs-toggle="tooltip" data-bs-placement="bottom" title="About" ttip='about'></i>
+		</a>-->
+		<div class="w-100 pt-3">
+			<p class="text-center d-flex align-items-center justify-content-center" tkey="mylife">MYRADA-LIFE</p>		
+		</div>
+		
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+		  <ul class="navbar-nav ms-auto">
+			<li class="nav-item">
+			  <a class="nav-link active" aria-current="page" href="#" onclick="loadPage('/mob/crpt/{{crpid}}','app-main','CRPT');return false;">
+				<i class="bi-clipboard-data text-dark fs-5" data-bs-toggle="tooltip" data-bs-placement="bottom" title="CRPT"></i>
+			  </a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link active" aria-current="page" href="#" onclick="loadPage('/mob/shgs/{{crpid}}','app-main','SHG');return false;">
+				<i class="bi-diagram-3 text-dark fs-5" data-bs-toggle="tooltip" data-bs-placement="bottom" title="SHGs"></i>
+			  </a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#" onclick="loadPage('/mob/crp/{{crpid}}','app-main','CRPInfo');return false;">
+				<i class="bi-card-text text-dark fs-5" data-bs-toggle="tooltip" data-bs-placement="bottom" title="My Profile"></i>
+			  </a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#" onclick="window.location.replace('/mob');return false;">
+				<i class="bi-x-circle text-dark fs-5" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout"></i>
+			  </a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>  
+	</header>
+
+	<main class="container" style="padding-top:70px">
+	<div id="app-main">
+
+	</div>
+	</main>

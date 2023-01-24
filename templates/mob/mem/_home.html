@@ -1,0 +1,43 @@
+	<header class="container-fluid">
+	<nav class="navbar navbar-expand navbar-light fixed-top bg-light p-0">
+	  <div class="container-fluid">
+		<!--<img class="m-1" src="https://myrada.org/wp-content/uploads/2020/12/myrada-logo.png" alt="" height="30">-->
+
+		  <a class="nav-link active" aria-current="page" href="#" onclick="load('BACK','');return false;">
+			<i class="bi-arrow-left-square text-dark fs-5"></i>
+		  </a>
+		<div class="w-100 pt-3">
+			<p class="text-center d-flex align-items-center justify-content-center" tkey="mylife">MYRADA-LIFE</p>		
+		</div>
+		
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+		  <ul class="navbar-nav ms-auto">
+			<li class="nav-item">
+			  <a class="nav-link active" aria-current="page" href="#" onclick="loadPage('/mob/acts/{{mem_info.mem_id}}','app-main','ACT');return false;">
+				<i class="bi-alarm text-dark fs-5"></i>
+			  </a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link active" aria-current="page" href="#" onclick="loadPage('/mob/txns/{{mem_info.mem_id}}','app-main','TXN');return false;">
+				<i class="bi-coin text-dark fs-5"></i>
+			  </a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link active" aria-current="page" href="#" onclick="loadPage('/mob/mem/{{mem_info.mem_id}}','app-main','MEMInfo');return false;">
+				<i class="bi-info-circle text-dark fs-5"></i>
+			  </a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>  
+	</header>
+
+	<main class="container" style="padding-top:70px">
+	<div id="app-main">
+
+	</div>
+	</main>

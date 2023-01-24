@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="cache-control" content="no-cache" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="Praveen Srivatsa">
+<link rel="shortcut icon" href="https://myrada.org/wp-content/uploads/2014/10/FAV.gif">	
+<title tkey="mylife">MYRADA-LIFE</title>
+<!--See https://github.com/shinsenter/defer.js -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.3/dist/simplex/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.3/dist/simplex/bootstrap.min.css"></noscript>
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"></noscript>
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.3/dist/simplex/bootstrap.min.css"></noscript>
+<noscript><link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css"></noscript>
+
+<link rel="stylesheet" href="/static/css/rubix.css">
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+</head>
+<body>
+	{% block bodycontent %}{% endblock bodycontent %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js" defer></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" defer></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js" defer></script>
+
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js" defer></script>
+<script src="https://cdn.datatables.net/plug-ins/1.12.1/api/sum().js" defer></script>
+
+<script src="/static/js/com/rubix.js?v.1c" defer></script>
+<script src="/static/js/web/home.js?v.1c" defer></script>
+
+<!-- Specific Page JS goes HERE  -->
+{% block basejavascripts %}{% endblock basejavascripts %}
+</body>
+</html>

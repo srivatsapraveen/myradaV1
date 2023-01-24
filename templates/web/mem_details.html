@@ -1,0 +1,93 @@
+		<nav class="pt-2" aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="#" tkey="dashboard" onclick="loadHOME();return false;">Dashboard</a></li>
+			<li class="breadcrumb-item"><a href="#" tkey="shg" onclick="load('SHG','{{mem_info.shg_id}}');return false;">SHG</a></li>
+			<li class="breadcrumb-item active" aria-current="page" tkey="mem">Member</li>
+		  </ol>
+		</nav>
+
+		<div class="container" >  
+		<div class="row g-3 mb-4">	
+		  <div class="col-md-6">
+			<label for="inputEmail4" class="form-label" tkey="mem_id">MemberID</label>
+			<input class="form-control" type="text" value="{{mem_info.mem_id}}" aria-label="readonly input example" readonly>
+		  </div>
+		  <div class="col-md-6">
+			<label for="cep_name" class="form-label" tkey="mem_name">Member Name</label>
+			<input class="form-control" id="cep_name" value="{{mem_info.mem_name}}" aria-label="readonly input example" readonly>
+		  </div>
+		</div>
+		
+		<nav>
+		  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+			<button class="nav-link active" id="nav-txns-tab" data-bs-toggle="tab" data-bs-target="#nav-txns" type="button" role="tab" aria-controls="nav-contact" aria-selected="true" tkey="mem_txns">Transactions</button>
+			<button class="nav-link" id="nav-acts-tab" data-bs-toggle="tab" data-bs-target="#nav-acts" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" tkey="mem_acts">Activities</button>
+			<button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" tkey="mem_profile">Member Profile</button>
+		  </div>
+		</nav>
+		<div class="tab-content border p-4" id="nav-tabContent">
+		  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+			<div class="row g-3 mb-4">
+				<div class="col-md-4">
+					<label for="mem_fam" class="form-label" tkey="mem_spouse">Family</label>
+					<input class="form-control" id="mem_fam" value="{{mem_info.mem_spouse}}" aria-label="readonly input example" readonly>
+				</div>
+				<div class="col-md-4">
+					<input class="form-control" type="hidden" id="mem_pur_id" value="{{mem_info.mem_act}}">
+					<label for="pur_desc" class="form-label" tkey="mem_purpose">Purpose</label>
+					<input class="form-control" id="pur_desc" value="" aria-label="readonly input example" readonly>
+				</div>
+				<div class="col-md-4">
+					<label for="portfolio" class="form-label" tkey="mem_lastactivity">Last Activity</label>
+					<input class="form-control" id="lastactivity" value="{{mem_info.mem_lastactivity}}" aria-label="readonly input example" readonly>
+				</div>	
+
+			  <div class="col-md-3">
+				<label for="portfolio" class="form-label" tkey="mem_amount">Authorized</label>
+				<input class="form-control" id="portfolio" value="{{mem_info.mem_totamt}}" aria-label="readonly input example" readonly>
+			  </div>	
+			  <div class="col-3">
+				<label for="portfolio" class="form-label" tkey="mem_received">Received</label>
+				<input class="form-control" id="portfolio" value="{{mem_info.mem_amtrec}}" aria-label="readonly input example" readonly>
+			  </div>
+			  <div class="col-3">
+				<label for="portfolio" class="form-label" tkey="mem_returned">Returned</label>
+				<input class="form-control" id="portfolio" value="{{mem_info.mem_amtret}}" aria-label="readonly input example" readonly>
+			  </div>
+			  <div class="col-3">
+				<label for="inputState" class="form-label" tkey="mem_outstanding">Outstanding</label>
+				<input class="form-control" id="cep_name" value="{{mem_info.mem_amtout}}" aria-label="readonly input example" readonly >
+			  </div>
+			
+			  {% if mem_info.mem_amtrec == 0 %}
+			  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+			    <a href="#" onclick="delMEM('{{mem_info.mem_id}}');return false;" class="btn btn-primary" tkey="del">Delete</a>
+			  </div>	
+			  {% endif %}
+				
+			</div>  	  
+		  </div>
+		  <div class="tab-pane fade" id="nav-acts" role="tabpanel" aria-labelledby="nav-acts-tab">
+			<table id="actlist" class="display nowrap" style="width:100%">
+				<thead>
+					<tr>
+						<th tkey="act_type">Type</th>
+						<th tkey="act_date">Date</th>
+						<th tkey="act_notes">Amount</th>
+					</tr>
+				</thead>
+			</table>
+		  </div>
+		  <div class="tab-pane fade  show active" id="nav-txns" role="tabpanel" aria-labelledby="nav-txns-tab">
+			<table id="txnlist" class="display nowrap" style="width:100%">
+				<thead>
+					<tr>
+						<th tkey="txn_type">Type</th>
+						<th tkey="txn_date">Date</th>
+						<th tkey="txn_amount">Notes</th>
+					</tr>
+				</thead>
+			</table>
+		  </div>
+		</div>
+		</div>  

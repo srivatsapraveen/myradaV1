@@ -1,0 +1,18 @@
+{
+    "lang": "en-us",
+    "name": "Myrada-LIFE",
+    "short_name": "Myrada-LIFE",
+    "description": "The Myrada LIFE Mobile App",
+    "start_url": "/mob/",
+	"scope" : "/mob/",
+    "background_color": "#2f3d58",
+    "theme_color": "#2f3d58",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/static/img/icon512.png",
+            "sizes": "512x512"
+        }
+    ]
+}

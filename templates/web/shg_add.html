@@ -1,0 +1,41 @@
+		<nav class="pt-2" aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="#" tkey="dashboard" onclick="loadHOME();return false;">Dashboard</a></li>
+			<li class="breadcrumb-item"><a href="#" tkey="crp" onclick="load('CRP','{{crp_id}}');return false;">CRP</a></li>
+			<li class="breadcrumb-item active" aria-current="page">NEW SHG</li>
+		  </ol>
+		</nav>
+
+		<div class="container" >
+		<form id="shgForm" class="app-form" action="/web/shg/new" method="post" replace="app-main" mod="SHG">		
+			<input class="form-control" type="hidden" id="crpid" value="{{crp_id}}" name="crp_id">
+			<input class="form-control" type="hidden" id="shgid" value="" name="shg_id">
+			<input class="form-control" type="hidden" id="shgmem" value="0" name="shg_memcount">
+			<div class="row g-3 mb-4">
+			  <div class="col-md-4">
+				<input class="form-control" type="hidden" id="crp_loc" value="{{crp_loc}}" name="shg_loc">
+				<label for="loc_list" class="form-label" tkey="shg_cluster">Cluster</label>
+				<select id="loc_list" class="form-select" disabled>
+				</select>
+			  </div>
+			  <div class="col-md-4">
+				<label for="vlg_list" class="form-label" tkey="shg_village">Village</label>
+				<select id="vlg_list" class="form-select" name="shg_vlg">
+				</select>
+			  </div>
+			  <div class="col-md-4">
+				<label for="crp_name" class="form-label" tkey="shg_name">SHG Name</label>
+				<input class="form-control" id="crpname" value="" name="shg_name" required maxlength=15>
+			  </div>
+			  			  
+			  <div class="col-md-12">
+				<label for="shg-fullname" class="form-label" tkey="shg_fullname">SHG Full Name</label>
+				<input class="form-control" id="shg-fullname" value="" name="shg_fullname" required maxlength=75>
+			  </div>
+
+			  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+				<button class="btn btn-primary" type="submit">Save</a>
+			  </div>	
+			</div>
+		</form>
+		</div>  
